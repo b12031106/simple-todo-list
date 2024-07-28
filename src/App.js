@@ -23,6 +23,14 @@ function App() {
         setSortType(sortType);
     };
 
+    const handleFilterTypeChange = (filterType) => {
+        setFilterType(filterType);
+    };
+
+    const handleKeywordChange = (keyword) => {
+        setFilterKeyword(keyword);
+    };
+
     const sortedTasks = [...tasks].sort((a, b) => {
         if (sortType === SORT_TYPE_ASC) {
             return a.createdAt - b.createdAt;
@@ -63,9 +71,9 @@ function App() {
             />
             <Filter
                 filterType={filterType}
-                onFilterTypeChange={setFilterType}
+                onFilterTypeChange={handleFilterTypeChange}
                 keyword={filterKeyword}
-                onKeywordChange={setFilterKeyword}
+                onKeywordChange={handleKeywordChange}
             />
             <Tasks tasks={filteredTasks} />
         </>
