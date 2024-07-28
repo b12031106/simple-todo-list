@@ -2,6 +2,8 @@
 
 This project was created using [Create React App](https://create-react-app.dev/), and it utilizes Redux and [Redux Toolkit](https://redux-toolkit.js.org/) for state management. The UI framework used is [Ant Design](https://ant.design/) (though it's not extensively used). Currently, there is no data storage implemented. In the future, functionality will be added to store data using local storage or a backend database.
 
+![demo screenshot](demo.png)
+
 ## Live Demo Site
 
 [https://simple-todo-list-rfv690lnx-justin-hsus-projects-e6d5b75e.vercel.app/](https://simple-todo-list-rfv690lnx-justin-hsus-projects-e6d5b75e.vercel.app/)
