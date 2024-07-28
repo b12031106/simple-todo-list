@@ -55,6 +55,14 @@ export default function Task({ task }) {
         dispatch(tasksActions.deleteTask(task.id));
     };
 
+    const statusTooltipTitle = `make ${
+        task.completed ? "uncompleted" : "completed"
+    }`;
+
+    const StatusIconComponent = task.completed
+        ? CloseOutlined
+        : CheckCircleOutlined;
+
     return (
         <>
             <Card
@@ -69,17 +77,8 @@ export default function Task({ task }) {
                     </Space>
                 }
                 actions={[
-                    <Tooltip
-                        placement="bottom"
-                        title={`make ${
-                            task.completed ? "uncompleted" : "completed"
-                        }`}
-                    >
-                        {task.completed ? (
-                            <CloseOutlined onClick={handleToggleTask} />
-                        ) : (
-                            <CheckCircleOutlined onClick={handleToggleTask} />
-                        )}
+                    <Tooltip placement="bottom" title={statusTooltipTitle}>
+                        <StatusIconComponent onClick={handleToggleTask} />
                     </Tooltip>,
                     <Tooltip placement="bottom" title={"edit description"}>
                         <EditOutlined onClick={handleEditClick} />
