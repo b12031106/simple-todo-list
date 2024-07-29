@@ -1,6 +1,6 @@
-# Getting Started with Simple To-Do List
+# Simple To-Do List
 
-This project was created using [Create React App](https://create-react-app.dev/), and it utilizes Redux and [Redux Toolkit](https://redux-toolkit.js.org/) for state management. The UI framework used is [Ant Design](https://ant.design/) (though it's not extensively used). Currently, there is no data storage implemented. In the future, functionality will be added to store data using local storage or a backend database.
+This project was created using [Create React App](https://create-react-app.dev/), and it utilizes Redux and [Redux Toolkit](https://redux-toolkit.js.org/) for state management. The UI framework used is [Ant Design](https://ant.design/) (though it's not extensively used). In the future, functionality will be added to store data using a backend database.
 
 ![demo screenshot](demo.png)
 
@@ -29,3 +29,39 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+## Codebase Architecture
+
+-   src/
+    -   App.js
+        -   The main component of the app. It contains the header, add task, sorting, filter, and tasks components.
+    -   App.css
+        -   CSS file for the app.
+    -   constants.js
+        -   Contains constants used throughout the app.
+    -   index.css
+        -   CSS file for the index page.
+    -   index.js
+        -   Sets up the Redux store and renders the App component.
+    -   components/
+        -   AddTask.js
+            -   Component for adding a new task.
+        -   Filter.js
+            -   Component for filtering tasks based on type and keyword.
+        -   Header.js
+            -   Component for the header of the app.
+        -   Sorting.js
+            -   Component for sorting tasks based on type.
+        -   Task.js
+            -   Component for displaying a single task.
+        -   Tasks.js
+            -   Component for displaying a list of tasks.
+    -   store/
+        -   index.js
+            -   Sets up the Redux store.
+        -   slices/
+            -   tasksSlices.js
+                -   Slice for managing tasks state.
+-   public/
+    -   index.html
+        -   Entry point for the index page.
