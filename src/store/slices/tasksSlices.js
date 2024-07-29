@@ -1,34 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { v4 as uuidv4 } from "uuid";
 
-const defaultTasks = [
-    {
-        id: uuidv4(),
-        completed: false,
-        title: `task1`,
-        description: `description 1`,
-        createdAt: new Date().getTime(),
-    },
-    {
-        id: uuidv4(),
-        completed: true,
-        title: `task2`,
-        description: `description 2`,
-        createdAt: new Date().getTime(),
-    },
-    {
-        id: uuidv4(),
-        completed: false,
-        title: `task2`,
-        description: undefined,
-        createdAt: new Date().getTime(),
-    },
-];
-
-const initialState = { tasks: defaultTasks };
+const initialState = { tasks: [] };
 const tasksSlice = createSlice({
     name: "tasks",
-    initialState,
+    initialState: initialState,
     reducers: {
         addTask: (state, action) => {
             state.tasks.push({
@@ -70,4 +46,7 @@ const tasksSlice = createSlice({
 });
 
 export const tasksActions = tasksSlice.actions;
+export const { addTask, deleteTask, toggleTask, updateTaskDescription } =
+    tasksSlice.actions;
+
 export default tasksSlice.reducer;

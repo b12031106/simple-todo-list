@@ -17,7 +17,11 @@ import {
     EditOutlined,
 } from "@ant-design/icons";
 
-import { tasksActions } from "../store/slices/tasksSlices";
+import {
+    updateTaskDescription,
+    toggleTask,
+    deleteTask,
+} from "../store/slices/tasksSlices";
 
 export default function Task({ task }) {
     const [form] = Form.useForm();
@@ -30,7 +34,7 @@ export default function Task({ task }) {
 
     const handleModalOk = () => {
         dispatch(
-            tasksActions.updateTaskDescription({
+            updateTaskDescription({
                 id: task.id,
                 description: form.getFieldValue("description"),
             })
@@ -44,7 +48,7 @@ export default function Task({ task }) {
     };
 
     const handleToggleTask = () => {
-        dispatch(tasksActions.toggleTask(task.id));
+        dispatch(toggleTask(task.id));
     };
 
     const handleEditClick = () => {
@@ -52,7 +56,7 @@ export default function Task({ task }) {
     };
 
     const handleDeleteTask = () => {
-        dispatch(tasksActions.deleteTask(task.id));
+        dispatch(deleteTask(task.id));
     };
 
     const statusTooltipTitle = `make ${

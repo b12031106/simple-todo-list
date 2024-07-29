@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { Row, Col, Form, Input, Button, Typography, message } from "antd";
-import { tasksActions } from "../store/slices/tasksSlices";
+import { addTask } from "../store/slices/tasksSlices";
 
 export default function AddTask() {
     const [form] = Form.useForm();
@@ -9,7 +9,7 @@ export default function AddTask() {
 
     const handleSubmit = () => {
         dispatch(
-            tasksActions.addTask({
+            addTask({
                 title: form.getFieldValue(`title`),
                 description: form.getFieldValue(`description`),
             })
